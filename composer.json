@@ -1,5 +1,5 @@
 {
-  "name": "ant/kallisto",
+  "name": "run/kallisto",
   "description": "Ant: For 4chan image crawling",
   "version": "1.0",
   "autoload": {
