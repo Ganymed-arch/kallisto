@@ -1,6 +1,6 @@
 <?php
 
-namespace Kallisto\Module;
+namespace Kallisto\Model;
 
 class run
 {
@@ -9,7 +9,6 @@ class run
     $this->run();
   }
   protected function run():void{
-    $oBase = new base();
-    echo $oBase->test();
+    new base();
   }
 }
