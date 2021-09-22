@@ -1,19 +1,12 @@
 <?php
 
 
-namespace Ant\Kallisto\base;
+namespace Kallisto\Module;
 
 
 class base
 {
-  public function __construct()
-  {
-    $this->run_Kallisto();
+  public function test(){
+    return "nice";
   }
-
-  protected function run_Kallisto() : bool
-  {
-    return true;
-  }
-
 }
