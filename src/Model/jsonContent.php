@@ -23,8 +23,7 @@ class jsonContent
   private function abstractBoards($boards) :void
   {
     foreach ($boards as $board){
-      var_dump($board);
-      echo "<hr>";
+      new board($board);
     }
   }
 

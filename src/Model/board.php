@@ -33,4 +33,37 @@ class board
   protected int $isSubjectRequired;                 #Do OPs require a subject |	1 or 0
   protected int $min_image_width;                   #What is the minimum image width (in pixels) |	Any positive integer
   protected int $min_image_height;                  #What is the minimum image height (in pixels) 	Any positive integer
+
+  public function __construct($obj)
+  {
+  $boardName                            = $obj->board;
+  $title                                = $obj->title;
+  $isWorkSafe                           = $obj->ws_board;
+  $howManyThreads                       = $obj->per_page;
+  $howManyIndexPages                    = $obj->pages;
+  $max_filesize                         = $obj->max_filesize;
+  $max_webm_filesize                    = $obj->max_webm_filesize;
+  $max_comment_chars                    = $obj->max_comment_chars;
+  $max_webm_duration                    = $obj->max_webm_duration;
+  $bump_limit                           = $obj->bump_limit;
+  $image_limit                          = $obj->image_limit;
+  $coolDowns                            = $obj->cooldowns;
+  $meta_description                     = $obj->meta_description;
+  $isSpoilerAllowed                     = $obj->spoilers;
+  $howManySpoilersOnBoard               = $obj->custom_spoilers;
+  $isArchiveEnabled                     = $obj->is_archived;
+  $board_flags                          = $obj->board_flags;
+  $isPostersHomeFlagEnabled             = $obj->country_flags;
+  $isUserIdEnabled                      = $obj->user_ids;
+  $isAllowedToSubmitUsingOekaki         = $obj->oekaki;
+  $isAllowedToSubmitSjis                = $obj->sjis_tags;
+  $isCodeSyntaxHighlightingSupported    = $obj->code_tags;
+  $isMathTagsSupported                  = $obj->math_tags;
+  $isImagePostingDisabled               = $obj->text_only;
+  $isNameFieldDisabled                  = $obj->forced_anon;
+  $isAudioWebmAllowed                   = $obj->webm_audio;
+  $isSubjectRequired                    = $obj->require_subject;
+  $min_image_width                      = $obj->min_image_width;
+  $min_image_height                     = $obj->min_image_height;
+  }
 }
