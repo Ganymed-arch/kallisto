@@ -28,10 +28,10 @@ class download
 
   /**
    * @param $url
-   * @return mixed
    */
-  public function setCurlUrl($url){
-    return $this->curl_url = $url;
+  public function setCurlUrl($url) : void
+  {
+    $this->curl_url = $url;
   }
 
   protected function getCurlErr($errNo){
