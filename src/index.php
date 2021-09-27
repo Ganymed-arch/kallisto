@@ -6,4 +6,4 @@ error_reporting(E_ALL);
 
 require_once "/www/htdocs/w01a761c/4chan/vendor/autoload.php";
 
-new \Kallisto\Controller\runController();
+$oRun = new \Kallisto\Controller\runController("https://a.4cdn.org/boards.json");
