@@ -6,6 +6,7 @@ class jsonContent
 {
   protected object $jsonData;
   protected array $packBoards;
+  protected object $oBoard;
 
   public function __construct($jsonData)
   {
@@ -17,14 +18,22 @@ class jsonContent
 
   private function run(){
     $this->abstractBoards($this->getPackBoards());
+    #var_dump($this->oBoard);
   }
 
-
+  /**
+   * @param $boards
+   */
   private function abstractBoards($boards) :void
   {
+    $oBoard = null;
+
     foreach ($boards as $board){
-      new board($board);
+      if ($board->board === 'b'){
+        new board($board);
+      }
     }
+    #$this->oBoard = $oBoard;
   }
 
   /**
