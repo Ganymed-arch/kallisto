@@ -10,7 +10,8 @@ class download
    * anderer Name später
    */
   public function setUp_curl(){
-    $init = curl_init($this->curl_url);
+    $init = curl_init($this->getCurlUrl());
+    #ToDo: ParamEingabe dynamischer gestalten
     curl_setopt($init, CURLOPT_RETURNTRANSFER, true);
     $return = curl_exec($init);
     curl_close($init);
