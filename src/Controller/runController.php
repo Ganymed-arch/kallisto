@@ -3,31 +3,30 @@
 namespace Kallisto\Controller;
 
 use Kallisto\Model\download;
+use Kallisto\Model\jsonContent;
 
 class runController
 {
   protected object $raw_Content;
-  protected array $jsonDecodedContent;
+  protected object $jsonDecodedContent;
   public string $urlToJson;
 
-  public function __construct()
+  public function __construct($givenUrl)
   {
+    $this->setUrlToJson($givenUrl);
     $this->run();
   }
 
   private function run(){
-    $this->setUrlToJson("https://a.4cdn.org/boards.json");
-
     $oDownload = new download();
     $oDownload->setCurlUrl($this->getUrlToJson());
 
     $content = json_decode($oDownload->setUp_curl());
 
     $this->setRawContent($content);
-
-    var_dump($this->getRawContent());
-
     $this->setDecodedJson($this->getRawContent());
+
+    new jsonContent($this->getJsonDecodedContent());
   }
 
   /**
@@ -40,11 +39,18 @@ class runController
 
   /**
    * @param $url
-   * @return mixed
    */
   public function setUrlToJson($url) :void
   {
     $this->urlToJson = $url;
+  }
+
+  /**
+   * @return object array
+   */
+  public function getJsonDecodedContent(): object
+  {
+    return $this->jsonDecodedContent;
   }
 
   /**
