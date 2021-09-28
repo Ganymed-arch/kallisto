@@ -2,6 +2,8 @@
 
 namespace Kallisto\Model;
 
+use Kallisto\Model\Board\board;
+
 class jsonContent
 {
   protected object $jsonData;

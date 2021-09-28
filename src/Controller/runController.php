@@ -2,6 +2,7 @@
 
 namespace Kallisto\Controller;
 
+use Kallisto\Model\Board\board;
 use Kallisto\Model\download;
 use Kallisto\Model\jsonContent;
 
@@ -28,6 +29,11 @@ class runController
 
     $oJsonContent = new jsonContent($this->getJsonDecodedContent());
     $oJsonContent->setWhichBoard('b');
+
+    /** @var board $oBoard */
+    $oBoard = $oJsonContent->getBoardObject();
+    echo $oBoard->boardName;
+
   }
 
   /**

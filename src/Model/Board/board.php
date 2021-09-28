@@ -1,6 +1,6 @@
 <?php
 
-namespace Kallisto\Model;
+namespace Kallisto\Model\Board;
 
 class board
 {
