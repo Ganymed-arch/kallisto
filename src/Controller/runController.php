@@ -5,6 +5,7 @@ namespace Kallisto\Controller;
 use Kallisto\Model\Board\board;
 use Kallisto\Model\download;
 use Kallisto\Model\jsonContent;
+use Kallisto\Model\Thread\thread;
 
 class runController
 {
@@ -32,8 +33,8 @@ class runController
 
     /** @var board $oBoard */
     $oBoard = $oJsonContent->getBoardObject();
-    echo $oBoard->boardName;
 
+    new threadsController($oBoard->boardName);
   }
 
   /**
