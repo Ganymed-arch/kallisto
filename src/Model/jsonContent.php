@@ -6,7 +6,7 @@ class jsonContent
 {
   protected object $jsonData;
   protected array $packBoards;
-  protected object $oBoard;
+  protected object $boardObject;
   protected string $whichBoard = 'b';
 
   public function __construct($jsonData)
@@ -31,9 +31,17 @@ class jsonContent
       //dynamischer, vielleicht auslagern?
       if ($board->board ===$this->getWhichBoard()){
         /** @var board oBoard */
-        $this->oBoard = new board($board);
+        $this->boardObject = new board($board);
       }
     }
+  }
+
+  /**
+   * @return object
+   */
+  public function getBoardObject(): object
+  {
+    return $this->boardObject;
   }
 
   /**
