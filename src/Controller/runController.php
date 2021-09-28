@@ -26,7 +26,8 @@ class runController
     $this->setRawContent($content);
     $this->setDecodedJson($this->getRawContent());
 
-    new jsonContent($this->getJsonDecodedContent());
+    $oJsonContent = new jsonContent($this->getJsonDecodedContent());
+    $oJsonContent->setWhichBoard('b');
   }
 
   /**
