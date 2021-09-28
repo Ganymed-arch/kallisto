@@ -18,7 +18,6 @@ class jsonContent
 
   private function run(){
     $this->abstractBoards($this->getPackBoards());
-    #var_dump($this->oBoard);
   }
 
   /**
@@ -26,14 +25,12 @@ class jsonContent
    */
   private function abstractBoards($boards) :void
   {
-    $oBoard = null;
-
     foreach ($boards as $board){
       if ($board->board === 'b'){
-        new board($board);
+        /** @var board oBoard */
+        $this->oBoard = new board($board);
       }
     }
-    #$this->oBoard = $oBoard;
   }
 
   /**
