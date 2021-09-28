@@ -7,6 +7,7 @@ class jsonContent
   protected object $jsonData;
   protected array $packBoards;
   protected object $oBoard;
+  protected string $whichBoard = 'b';
 
   public function __construct($jsonData)
   {
@@ -26,11 +27,29 @@ class jsonContent
   private function abstractBoards($boards) :void
   {
     foreach ($boards as $board){
-      if ($board->board === 'b'){
+      //ToDo: board-Bestimmung
+      //dynamischer, vielleicht auslagern?
+      if ($board->board ===$this->getWhichBoard()){
         /** @var board oBoard */
         $this->oBoard = new board($board);
       }
     }
+  }
+
+  /**
+   * @return string
+   */
+  public function getWhichBoard(): string
+  {
+    return $this->whichBoard;
+  }
+
+  /**
+   * @param string $whichBoard
+   */
+  public function setWhichBoard(string $whichBoard): void
+  {
+    $this->whichBoard = $whichBoard;
   }
 
   /**
