@@ -36,42 +36,120 @@ class board
 
   public function __construct($obj)
   {
-    var_dump($obj[3]);
-  }
+    if ($obj->board){
+      $this->boardName = $obj->board;
+    }
 
-  /**
-   * @param $obj
-   */
-  protected function setVariables($obj) :void
-  {
-    $boardName                            = property_exists($obj->board);
-    $title                                = property_exists($obj->title);
-    $isWorkSafe                           = property_exists($obj->ws_board);
-    $howManyThreads                       = property_exists($obj->per_page);
-    $howManyIndexPages                    = property_exists($obj->pages);
-    $max_filesize                         = property_exists($obj->max_filesize);
-    $max_webm_filesize                    = property_exists($obj->max_webm_filesize);
-    $max_comment_chars                    = property_exists($obj->max_comment_chars);
-    $max_webm_duration                    = property_exists($obj->max_webm_duration);
-    $bump_limit                           = property_exists($obj->bump_limit);
-    $image_limit                          = property_exists($obj->image_limit);
-    $coolDowns                            = property_exists($obj->cooldowns);
-    $meta_description                     = property_exists($obj->meta_description);
-    $isSpoilerAllowed                     = property_exists($obj->spoilers);
-    $howManySpoilersOnBoard               = property_exists($obj->custom_spoilers);
-    $isArchiveEnabled                     = property_exists($obj->is_archived);
-    $board_flags                          = property_exists($obj->board_flags);
-    $isPostersHomeFlagEnabled             = property_exists($obj->country_flags);
-    $isUserIdEnabled                      = property_exists($obj->user_ids);
-    $isAllowedToSubmitUsingOekaki         = property_exists($obj->oekaki);
-    $isAllowedToSubmitSjis                = property_exists($obj->sjis_tags);
-    $isCodeSyntaxHighlightingSupported    = property_exists($obj->code_tags);
-    $isMathTagsSupported                  = property_exists($obj->math_tags);
-    $isImagePostingDisabled               = property_exists($obj->text_only);
-    $isNameFieldDisabled                  = property_exists($obj->forced_anon);
-    $isAudioWebmAllowed                   = property_exists($obj->webm_audio);
-    $isSubjectRequired                    = property_exists($obj->require_subject);
-    $min_image_width                      = property_exists($obj->min_image_width);
-    $min_image_height                     = property_exists($obj->min_image_height);
+    if ($obj->title){
+      $this->title = $obj->title;
+    }
+
+    if ($obj->ws_board){
+      $this->isWorkSafe = $obj->ws_board;
+    }
+
+    if ($obj->per_page){
+      $this->howManyThreads = $obj->per_page;
+    }
+
+    if ($obj->pages){
+      $this->howManyIndexPages = $obj->pages;
+    }
+
+    if ($obj->max_filesize) {
+      $this->max_filesize = $obj->max_filesize;
+    }
+
+    if ($obj->max_webm_filesize) {
+      $this->max_webm_filesize = $obj->max_webm_filesize;
+    }
+
+    if ($obj->max_comment_chars) {
+      $this->max_comment_chars = $obj->max_comment_chars;
+    }
+
+    if ($obj->max_webm_duration) {
+      $this->max_webm_duration = $obj->max_webm_duration;
+    }
+
+    if ($obj->bump_limit) {
+      $this->bump_limit = $obj->bump_limit;
+    }
+
+    if ($obj->image_limit) {
+      $this->image_limit = $obj->image_limit;
+    }
+
+    if ($obj->cooldowns) {
+      $this->coolDowns = $obj->cooldowns;
+    }
+
+    if ($obj->meta_description) {
+      $this->meta_description = $obj->meta_description;
+    }
+
+    if ($obj->spoilers) {
+      $this->isSpoilerAllowed = $obj->spoilers;
+    }
+
+    if ($obj->custom_spoilers) {
+      $this->howManySpoilersOnBoard = $obj->custom_spoilers;
+    }
+
+    if ($obj->is_archived) {
+      $this->isArchiveEnabled = $obj->is_archived;
+    }
+
+    if ($obj->board_flags) {
+      $this->board_flags = $obj->board_flags;
+    }
+
+    if ($obj->country_flags) {
+      $this->isPostersHomeFlagEnabled = $obj->country_flags;
+    }
+
+    if ($obj->user_ids) {
+      $this->isUserIdEnabled = $obj->user_ids;
+    }
+
+    if ($obj->oekaki) {
+      $this->isAllowedToSubmitUsingOekaki = $obj->oekaki;
+    }
+
+    if ($obj->sjis_tags) {
+      $this->isAllowedToSubmitSjis = $obj->sjis_tags;
+    }
+
+    if ($obj->code_tags) {
+      $this->isCodeSyntaxHighlightingSupported = $obj->code_tags;
+    }
+
+    if ($obj->math_tags) {
+      $this->isMathTagsSupported = $obj->math_tags;
+    }
+
+    if ($obj->text_only) {
+      $this->isImagePostingDisabled = $obj->text_only;
+    }
+
+    if ($obj->forced_anon) {
+      $this->isNameFieldDisabled = $obj->forced_anon;
+    }
+
+    if ($obj->webm_audio) {
+      $this->isAudioWebmAllowed = $obj->webm_audio;
+    }
+
+    if ($obj->require_subject) {
+      $this->isSubjectRequired = $obj->require_subject;
+    }
+
+    if ($obj->min_image_width) {
+      $this->min_image_width = $obj->min_image_width;
+    }
+
+    if ($obj->min_image_height) {
+      $this->min_image_height = $obj->min_image_height;
+    }
   }
 }
