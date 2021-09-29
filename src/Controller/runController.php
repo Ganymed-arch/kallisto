@@ -23,7 +23,7 @@ class runController
     $oDownload = new download();
     $oDownload->setCurlUrl($this->getUrlToJson());
 
-    $content = json_decode($oDownload->setUp_curl());
+    $content = json_decode($oDownload->runSetUp());
 
     $this->setRawContent($content);
     $this->setDecodedJson($this->getRawContent());
@@ -34,7 +34,8 @@ class runController
     /** @var board $oBoard */
     $oBoard = $oJsonContent->getBoardObject();
 
-    new threadsController($oBoard->boardName);
+    #new threadsController($oBoard->boardName);
+    new catalogController($oBoard->boardName);
   }
 
   /**
