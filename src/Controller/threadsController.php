@@ -35,6 +35,6 @@ class threadsController
     $oDownloader = new download();
     $oDownloader->setCurlUrl($this->threadUrl);
 
-    return $oDownloader->setUp_curl();
+    return $oDownloader->runSetUp();
   }
 }
